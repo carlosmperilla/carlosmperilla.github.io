@@ -1,0 +1,440 @@
+:root {
+    --dark-brown: #a54a38;
+    --light-brown: #bf624c;
+    --dark-green: #51af5e;
+    --light-green: #51af5e;
+    --shadow: 0 19px 38px rgba(0,0,0,0.30),
+              0 15px 12px rgba(0,0,0,0.22);
+    --basic-cat-time: 4s;
+    --cat-color: gold;
+    --cat-alert-color: rgb(230, 125, 26);
+    --cat--top: 5px;
+    --cat-eye-distant: 15px;
+}
+
+body {
+    counter-reset: score;
+    display: grid;
+    margin: 0;
+    height: 100vh;
+    place-items: center;
+    width: 100%;
+    background-color: rgb(193, 128, 7);
+}
+
+.left-ear, .right-ear {
+    position: absolute;
+    top: var(--cat--top);
+}
+
+.left-ear {
+    left: 2px;
+}
+
+.right-ear {
+    right: 2px;
+    transform: rotateY(180deg);
+}
+
+.left-ear--outer, .right-ear--outer {
+    background-color: var(--cat-color);
+    height: 40px;
+    width: 40px;
+    border-radius: 10%;
+}
+
+.left-ear--inner, .right-ear--inner {
+    width: 90%;
+    height: 90%;
+    background-color: darksalmon;
+    border-radius: 5%;
+}
+
+.left-ear--inner, .left-ear--outer,
+.right-ear--inner, .right-ear--outer {
+    transform: rotate(-91deg) skew(-10deg, -10deg);
+}
+
+.right-ear {
+    animation-name: right-ear-motion;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+.left-ear {
+    animation-delay: 1.5s;
+    animation-name: left-ear-motion;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes left-ear-motion {
+    0% {
+        transform: scaleY(1);
+    }
+    3% {
+        transform: scaleY(0.25);
+    }
+    7% {
+        transform: scaleY(1);
+    }
+}
+
+@keyframes right-ear-motion {
+    0% {
+        transform: scaleY(1) rotateY(180deg);
+    }
+    3% {
+        transform: scaleY(0.25) rotate(180deg);
+    }
+    7% {
+        transform: scaleY(1) rotateY(180deg);
+    }
+}
+
+.head {
+    background-color: var(--cat-color);
+    height: 80px;
+    width: 100%;
+    position: absolute;
+    margin: 0 auto;
+    border-radius: 50%;
+    left: 0;
+    right: 0;
+    top: var(--cat--top);
+}
+
+.head__eye {
+    background-color: rgb(14, 16, 14);
+    height: 15px;
+    width: 15px;
+    position: absolute;
+    border-radius: 50%;
+    top: 15px;
+
+    color: white;
+    text-align: center;
+
+    animation-name: blink;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes blink {
+    0% {
+        transform: scaleY(1);
+        text-align: center;
+    }
+    5% {
+        transform: scaleY(0.25);
+    }
+    7% {
+        text-align: left;
+    }
+    10% {
+        transform: scaleY(1);
+    }
+    50% {
+        text-align: right;
+    }
+    100% {
+        text-align: center;
+    }
+    
+}
+
+.head__eye--left {
+    left: var(--cat-eye-distant);
+}
+
+.head__eye--right {
+    right: var(--cat-eye-distant);
+}
+
+.head__whiskers-and-nose {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.head__whiskers-and-nose img {
+    display: inline-block;
+    width: 60px;
+}
+
+.lawn {
+    background-color: var(--dark-green);
+    height: 20px;
+    width: 100%;
+}
+
+.land {
+    background: linear-gradient(135deg, var(--dark-green) 25%, transparent 25%) -50px 0,
+                linear-gradient(-135deg, var(--dark-green) 25%, transparent 25%) -50px 0,
+                linear-gradient(45deg, var(--light-brown) 25%, transparent 25%),
+                linear-gradient(-45deg, transparent 25%, var(--dark-brown) 25%);
+    background-size: 33px 30px;
+    height: 30px;
+    width: 100%;
+  }
+
+.phone {
+    background-color: #CCEFFF;
+    border: 8px solid black;
+    border-radius: 40px;
+    height: 95vh;
+    width: 300px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    position: relative;
+    cursor: url("imgs/mallet_cursor.png"), auto;
+}
+
+input[type=checkbox] {
+    appearance: none;
+    cursor: url("imgs/mallet_look_cursor.png"), auto;
+    height: 50px;
+    width: 80px;
+    margin: 0;
+    position: relative;
+    top: 0;
+    z-index: 2;
+}
+
+input[type=checkbox]:hover {
+    cursor: url("imgs/mallet_look_cursor.png"), auto;
+}
+
+input[type=checkbox]:hover ~ div, 
+input[type=checkbox]:hover ~ div > .left-ear--outer,
+input[type=checkbox]:hover ~ div > .right-ear--outer {
+    background-color: var(--cat-alert-color);
+}
+
+input[type=checkbox]:focus {
+    appearance: none;
+    outline: none;
+}
+
+input:checked {
+    counter-increment: score;
+    visibility: hidden;
+}
+
+input:checked ~ div {
+    visibility: hidden;
+}
+
+.dead {
+    visibility: hidden;
+}
+
+input:checked ~ .dead img {
+    width: 100px;
+}
+
+input:checked ~ .dead {
+    animation-name: skull;
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
+}
+
+@keyframes skull {
+    0% {
+        visibility: visible;
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-200px);
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.score::after {
+    content: counter(score);
+}
+  
+@keyframes layer {
+    0% {
+        /* bottom: 0; */
+        transform: translateY(0);
+    }
+    25% {
+        /* bottom: -80px; */
+        transform: translateY(-80px);
+    }
+    100% {
+        /* bottom: 0; */
+        transform: translateY(0);
+    }
+}
+
+
+.layer-1, .layer-2, .layer-4, .layer-6{
+    width: 80px;
+    height: 370px;
+    bottom: 0;
+    position: absolute;
+
+    animation-name: layer;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.layer-1 {
+    right: 60px;
+
+    animation-duration: var(--basic-cat-time);
+}
+
+.layer-2 {
+      left: 60px;
+      z-index: 2;
+      
+      animation-duration: calc(var(--basic-cat-time) * 1.5);
+    }
+    
+.layer-3, .layer-5, .layer-7 {
+    background: var(--light-brown);
+    border-radius: 20px; 
+    box-shadow: var(--shadow); 
+    overflow: hidden; 
+    position: absolute;
+    bottom: 0;
+}
+
+.layer-3 {
+    height: 400px;
+    width: 220px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    z-index: 3;
+  }
+
+.layer-4 {
+    height: 270px;
+    left: 15px;
+    z-index: 4;
+
+    animation-duration:  calc(var(--basic-cat-time) * 0.5);
+}
+
+.layer-5 {
+    height: 300px;
+    width: 200px;
+    z-index: 5;
+}
+  
+.layer-6 {
+    height: 170px;
+    right: 30px;
+    z-index: 6;
+
+    animation-duration:  calc(var(--basic-cat-time) * 2);
+}
+  
+.layer-7 {
+    height: 200px;
+    right: 0;
+    width: 150px;
+    z-index: 7;
+}
+  
+.layer-8 {
+    height: 120px;
+    width: 200px;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 8;
+}
+  
+
+.layer-8__center-lawn, 
+.layer-8__left-lawn, 
+.layer-8__right-lawn {
+    background: var(--dark-green);
+    width: 80px;
+    border-radius: 40px 40px 0 0;
+    position: absolute;
+    bottom: 0;
+    display: inline-block;
+}
+
+.layer-8__left-lawn {
+    height: 70%;
+    left: 0;
+}
+
+.layer-8__center-lawn {
+    height: 100%;
+    left: 60px;
+}
+
+.layer-8__right-lawn {
+    height: 80%;
+    left: 130px;
+}
+
+.layer-9, .layer-10 {
+    width: 120px;
+    height: 100px;
+    position: absolute;
+    bottom: 0;
+}
+
+.layer-9 {
+    z-index: 9;
+}
+
+.layer-9__left-cloud, .layer-10__left-cloud,
+.layer-9__right-cloud, .layer-10__right-cloud {
+    background: white;
+    display: inline-block;
+    position: absolute;
+}
+
+.layer-9__left-cloud, .layer-10__left-cloud { /* After After */
+    width: 80px;
+    height: 100%;
+    border-radius: 40px 40px 0 0;
+    left: 0;
+}
+  
+.layer-9__right-cloud, .layer-10__right-cloud { /* After After */
+    width: 40px;
+    height: 60%;
+    border-radius: 0 40px 30px 0;
+    left: 80px;
+    bottom: 0;
+}
+  
+.layer-10 {
+    right: 0;
+    z-index: 10;
+    transform: rotateY(180deg);
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+    color: saddlebrown;
+    margin: 45px 0 10px;
+}
+
+.score {
+    color: var(--light-brown);
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    margin: 0;
+    text-align: center;
+}

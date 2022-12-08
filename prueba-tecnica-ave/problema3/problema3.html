@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="problema3.css">
+    <title>Problema 3</title>
+</head>
+<body>
+    <h1 id="problem--principal-title">Problema 3</h1>
+    <p class="problem--description">
+        Se desea crear un validador para la contraseña de un sitio web, pero esta debe ser
+        muy segura, para ello el cliente solicita los siguientes requerimientos para el password:
+        <ol>
+            <li>Debe tener al menos 16 caracteres.</li>
+            <li>Debe tener letras minúsculas y mayúsculas.</li>
+            <li>No puede tener 2 letras iguales consecutivas.</li>
+            <li>Debe contener al menos 4 números.</li>
+            <li>No puede tener 2 números iguales consecutivos.</li>
+            <li>Debe tener al menos 2 caracteres especiales (!@#$%ˆ&*-_+=?) pero ninguno de
+            ellos puede repetirse en ninguna posición y además los caracteres no pueden
+            estar juntos.</li>
+            <li>No se puede usar el número 0.</li>
+            <li>No se puede colocar espacios.</li>
+        </ol>
+    </p>
+    <form id="solution">
+        <input type="text" id="password--visible">
+        <button type="submit">Enviar</button>
+    </form>
+    <section class="solutions--box">
+        <p class="results">
+            <span>Es valido?&nbsp;</span><span class="results-text"></span>
+        </p>
+    </section>
+</body>
+<script src="problema3.js" async></script>
+</html>

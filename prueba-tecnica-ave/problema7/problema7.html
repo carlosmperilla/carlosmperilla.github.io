@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="problema7.css">
+    <title>Problema 7</title>
+</head>
+<body>
+    <h1 id="problem--principal-title">Problema 7</h1>
+    <p class="problem--description">
+        Elaborar un formulario de tareas que contenga la siguiente información: Nombre de la
+        tarea, fecha, prioridad y descripción. Al aceptar en el formulario, la información se debe
+        visualizar en una tabla que debe ubicarse debajo del formulario. Consideraciones:
+
+        <ul>
+            <li>
+                Puedes agregar más elementos a la tabla, es decir más tareas.
+            </li>
+            <li>
+                En la tabla debe poder editar o borrar algún elemento usando un ícono o
+                funcionalidad acorde.
+            </li>
+            <li>
+                El formulario debe tener un botón que lo limpie.
+            </li>
+        </ul>
+    </p>
+    <section class="solutions--box">
+        <form id="solution__form">
+            <label for="task-name">Nombre de la tarea</label>
+            <input type="text" id="task-name" placeholder="Nombre de la tarea">
+            <label for="task-date">Fecha</label>
+            <input type="date" id="task-date" placeholder="Fecha">
+            <label for="task-priority">Prioridad</label>
+            <select id="task-priority">
+                <option value="Alta">Alta</option>
+                <option value="Media">Media</option>
+                <option value="Baja">Baja</option>
+            </select>
+            <label for="task-description">Descripción</label>
+            <textarea id="task-description" cols="30" rows="10" placeholder="Descripción"></textarea>
+            <button type="submit">Crear tarea</button>
+            <button type="reset">Resetear formulario</button>
+        </form>
+        <table class="task-table">
+            <thead>
+                <tr>
+                    <th>Actions</th>
+                    <th>Nombre de la tarea</th>
+                    <th>Fecha</th>
+                    <th>Prioridad</th>
+                    <th>Descripción</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
+</body>
+<script src="problema7.js" async></script>
+</html>

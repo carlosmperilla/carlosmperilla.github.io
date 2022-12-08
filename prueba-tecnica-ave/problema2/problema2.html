@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="problema2.css">
+    <title>Problema 2</title>
+</head>
+<body>
+    <h1 id="problem--principal-title">Problema 2</h1>
+    <p class="problem--description">
+        Genere una serie de funciones (Una por cada ítem) que consuma de la página de
+       <a href="https://pokeapi.co/">https://pokeapi.co/</a> y retorne lo siguiente:
+    </p>
+    
+    <ol class="solutions--box">
+        <li id="first-solution">
+            <p>
+                Suma total de pokemones por tipo, debe recibir el tipo en string.
+            </p>
+            <form>
+                <input type="text" class="pokemon-types__input" list="pokemon-types" placeholder="Tipo de pokemon">
+                <button type="submit" class="pokemon-types__button">Enviar</button>
+            </form>
+            <section class="results--box">
+                <h3 class="results--title">Resultado:</h3>
+                <span class="results"></span>
+            </section>
+        </li>
+        <li id="second-solution">
+            <p>
+                Dado 2 tipos de pokémon retornar todos los pokemones que cumplen con esos
+                2 tipos.
+            </p>
+            <form>
+                <input type="text" class="pokemon-types__input--first" list="pokemon-types" placeholder="Tipo de pokemon 1">
+                <input type="text" class="pokemon-types__input--second" list="pokemon-types" placeholder="Tipo de pokemon 2">
+                <button type="submit" class="pokemon-types__button">Enviar</button>
+            </form>
+            <section class="results--box">
+                <h3 class="results--title">Resultado:</h3>
+                <ul class="results"></ul>
+            </section>
+        </li>
+        <li id="third-solution">
+            <p>
+                Dado el nombre de un pokémon retornar el número del mismo.
+            </p>
+            <form>
+                <input type="text" class="pokemon-names__input" list="pokemon-names" placeholder="Nombre de pokemon">
+                <button type="submit" class="pokemon-names__button">Enviar</button>
+            </form>
+            <section class="results--box">
+                <h3 class="results--title">Resultado:</h3>
+                <span class="results"></span>
+            </section>
+        </li>
+        <li id="fourth-solution">
+            <p>
+                Dado el número de un pokémon retornar un objeto con sus 6 stats base.
+            </p>
+            <form>
+                <input type="number" class="pokemon-ids__input" min="1" max="1154" placeholder="Id de pokemon">
+                <button type="submit" class="pokemon-ids__button">Enviar</button>
+            </form>
+            <section class="results--box">
+                <h3 class="results--title">Resultado:</h3>
+                <ol class="results"></ol>
+            </section>
+        </li>
+        <li id="fifth-solution">
+            <p>
+                Realizar una función que reciba un arreglo de números (Ids de pokémon) y un
+                ordenador y retorne los pokémon en un arreglo con su nombre, tipo y peso
+                ordenados según se indique por la función por uno de estos 3 indicadores.
+            </p>
+            <form>
+                <label for="multiple-numbers">Ingrese los id, separados por coma.</label>
+                <input type="text" id="multiple-numbers" class="pokemon-ids__input" placeholder="Varios Id de pokemon">
+                <select class="sorted__select">
+                    <option value="name">nombre</option>
+                    <option value="types">tipos</option>
+                    <option value="weight">peso</option>
+                </select>
+                <button type="submit" class="pokemon-ids__button">Enviar</button>
+            </form>
+            <section class="results--box">
+                <h3 class="results--title">Resultado:</h3>
+                <ol class="results"></ol>
+            </section>
+        </li>
+        <li id="sixth-solution">
+            <p>
+                Recibir un número y un tipo (de pokémon) y retornar un true o false si el
+                pokémon de ese número posee este tipo.
+            </p>
+            <form>
+                <input type="number" class="pokemon-ids__input" min="1" max="1154" placeholder="Id de pokemon">
+                <input type="text" class="pokemon-types__input" list="pokemon-types" placeholder="Tipo de pokemon">
+                <button type="submit" class="pokemon-ids__button">Enviar</button>
+            </form>
+            <section class="results--box">
+                <h3 class="results--title">Resultado:</h3>
+                <span class="results"></span>
+            </section>
+        </li>
+    </ol>
+    <datalist id="pokemon-types"></datalist>
+    <datalist id="pokemon-names"></datalist>
+</body>
+<script type="module" src="problema2.js" async></script>
+<script type="module" src="dom-interactive.js" async></script>
+</html>

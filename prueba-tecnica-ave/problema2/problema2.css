@@ -1,0 +1,23 @@
+.results--box {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.results--box span {
+    display: flex;
+    align-items: center;
+}
+
+#second-solution .results--box .results {
+    max-height: 100px;
+    overflow: auto;
+}
+
+#fifth-solution .results--box .results {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow: auto;
+    max-height: 100px;
+}

@@ -1,0 +1,24 @@
+.pokemon--results {
+    display: inline-flex;
+    flex-direction: column;
+    background: cadetblue;
+    border-radius: 25px;
+    padding: 10px 38px;
+    margin-top: 20px;
+}
+
+.backward--load-img,
+.forward--load-img {
+    background: linear-gradient(
+45deg
+, #a56844, #a7bd2f);
+    border: none;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+.backward--load-img:active,
+.forward--load-img:active {
+    transform: scale(.8);
+    filter: brightness(1.1);
+}

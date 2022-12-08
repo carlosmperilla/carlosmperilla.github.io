@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="problema6.css">
+    <title>Problema 6</title>
+</head>
+<body>
+    <h1 id="problem--principal-title">Problema 6</h1>
+    <p class="problem--description">
+        Crear una página en donde se muestre un campo de texto que permita buscar en el
+        siguiente API: <a href="https://pokeapi.co/">https://pokeapi.co/</a> por el número 
+        o nombre del pokémon y muestre en pantalla los siguientes datos: 
+        Nombre, número, tipo, peso, altura y una imágen.
+    </p>
+
+    <section class="solutions--box">
+        <form>
+            <input type="text" list="pokemon-names" class="pokemon__input" placeholder="Id o Nombre de Pokemon">
+            <button type="submit">Enviar</button>
+        </form>
+        <section class="pokemon--results">
+            <h3 class="pokemon--name"></h3>
+            <span class="pokemon--id"></span>
+            <section>
+                <img class="pokemon--img"></img>
+                <button class="backward--load-img">&lt;</button>
+                <button class="forward--load-img">&gt;</button>
+            </section>
+            <span class="pokemon--weight"></span>
+            <span class="pokemon--height"></span>
+            <span class="pokemon--types"></span>
+        </section>
+    </section>
+    <datalist id="pokemon-names"></datalist>
+</body>
+<script src="problema6.js" async></script>
+</html>

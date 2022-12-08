@@ -1,0 +1,27 @@
+.solutions--box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#multiplication--form-a,
+#multiplication--form-b,
+.solution-a,
+.solution-b {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.results--box {
+    display: inline-flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.results--box > span {
+    display: flex;
+    align-items: center;
+}

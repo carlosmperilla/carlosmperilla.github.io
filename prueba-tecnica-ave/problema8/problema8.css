@@ -1,0 +1,20 @@
+.imgs__box {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.imgs__box > div {
+    max-width: 500px;
+    aspect-ratio: 1/1;
+    overflow-y: auto;
+    margin-bottom: 31px;
+}
+
+.imgs__box > div > img{
+    max-width: 500px;
+}

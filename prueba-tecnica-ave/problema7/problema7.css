@@ -1,0 +1,101 @@
+.solutions--box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#solution__form {
+    margin: 20px auto;
+    display: inline-flex;
+    flex-direction: column;
+    width: fit-content;
+    background-color: sienna;
+    color: wheat;
+    padding: 20px;
+    border-radius: 25px;
+    gap: 5px;
+}
+
+#solution__form button[type='submit'] {
+    margin-top: 15px;
+}
+
+#solution__form button {
+    border: none;
+    border-radius: 15px;
+    font-weight: bold;
+    background: linear-gradient(
+    45deg
+    , #b57253, #eebe68);
+    color: #6d2d0e;
+}
+
+.task-table td:first-child button:hover,
+#solution__form button:hover {
+    filter: brightness(.8);
+}
+
+.task-table td:first-child button:active,
+#solution__form button:active {
+    filter: brightness(1.2);
+}
+
+#solution__form button[type="reset"] {
+    background: linear-gradient(
+    45deg
+    , #676266, #3d2c3e);
+        color: #d6d6d6;
+}
+
+.task-table {
+    background-color: wheat;
+    padding: 10px;
+    margin-top: 15px;
+    margin-bottom: 50px;
+    width: 80%;
+
+    white-space: nowrap;
+    border: none;
+}
+
+.task-table thead {
+    background: darksalmon;
+    color: #6b351c;
+}
+
+.task-table th {
+    font-weight: bolder;
+}
+
+.task-table th, .task-table td, .task-table {
+    border: 1px solid whitesmoke;
+    border-collapse: collapse;
+}
+
+.task-table th, .task-table td {
+    padding: 2px 10px;
+    height: 26px;
+    text-align: center;
+}
+
+.task-table td:first-child {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.task-table td:first-child select {
+    border-radius: 10px;
+    background: beige;
+    color: #734c10;
+    font-weight: bold;
+}
+
+.task-table td:first-child button {
+    border-radius: 10px;
+    border: none;
+    background-color: #efd170;
+    color: #734a14;
+    font-weight: bold;
+}

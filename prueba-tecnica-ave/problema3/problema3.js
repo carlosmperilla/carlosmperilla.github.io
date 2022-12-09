@@ -22,8 +22,8 @@ function secondValidation(password){
 
 // No puede tener 2 letras iguales consecutivas.
 function isLetter(char){
-    return  ((char < 'Z') && (char > 'A') ||
-            (char < 'z') && (char > 'a')) ||
+    return  ((char <= 'Z') && (char >= 'A') ||
+            (char <= 'z') && (char >= 'a')) ||
             (char === 'ñ') || (char === 'Ñ')
 }
 
